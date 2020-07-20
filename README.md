@@ -1,2 +1,4 @@
 # inkoo
-My first website :) (HTML &amp; CSS)
+html css를 막 접하고 처음으로 만든 웹 사이트입니다!
+디자인부터 코딩까지 손수 했어요.
+애착 가는 첫 사이트🥰
