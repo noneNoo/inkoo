@@ -28,6 +28,11 @@ h6 {
   margin: 0;
 }
 
+button {
+  padding: 0;
+  cursor: pointer;
+}
+
 ul {
   margin: 0;
   padding: 0;
@@ -124,6 +129,8 @@ a {
 /*-----슬라이더-----*/
 
 #visual-banner {
+  display: flex;
+  align-items: center;
   width: 100vw;
   height: 600px;
   position: relative;
@@ -148,8 +155,55 @@ a {
 
 .slide-content {
   width: 1024px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   margin: 2rem;
+}
+
+#prev-btn,
+#next-btn {
+  display: flex;
+  position: absolute;
+  color: black;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  margin: 2rem;
+  background-color: rgba(255, 255, 255, 0.238);
+  padding: 1rem;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  transition: 0.2s;
+}
+
+#visual-banner:hover #prev-btn,
+#visual-banner:hover #next-btn {
+  transform: scale(1.2);
+}
+
+#next-btn {
+  right: 0;
+}
+
+/*- pager -*/
+#pager {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  bottom: 2rem;
+}
+
+#pager > span {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 100px;
+  margin: 0.5rem;
+  background-color: white;
+}
+
+#pager > span.active {
+  background-color: rgb(70, 48, 144);
+  width: 3rem;
 }
 
 /*- 슬라이더 개별 스타일링 -*/
@@ -158,4 +212,9 @@ a {
 }
 #slide1 > .slide-content {
   font-family: 'MapoGoldenPier';
+  text-align: right;
+  font-size: 2rem;
+}
+#slide1 .point-text {
+  color: rgb(70, 48, 144);
 }
