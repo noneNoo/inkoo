@@ -112,6 +112,19 @@ a {
   display: flex;
 }
 
+#search-input {
+  border: none;
+  border-radius: 100px;
+  padding: 0.5rem;
+  outline: none;
+  width: 200px;
+  margin-right: 1rem;
+}
+
+#mypage {
+  font-size: 1.3rem;
+}
+
 .icons > button {
   font-size: 1.2rem;
   display: flex;
@@ -120,6 +133,7 @@ a {
   border: none;
   outline: none;
   background-color: transparent;
+  border-radius: 4px;
 }
 
 .icons > button:hover {
@@ -155,33 +169,7 @@ a {
 
 .slide-content {
   width: 1024px;
-  /* border: 1px solid black; */
-  margin: 2rem;
-}
-
-#prev-btn,
-#next-btn {
-  display: flex;
-  position: absolute;
-  color: black;
-  border: none;
-  outline: none;
-  background-color: transparent;
-  margin: 2rem;
-  background-color: rgba(255, 255, 255, 0.238);
-  padding: 1rem;
-  font-size: 1.5rem;
-  border-radius: 50%;
-  transition: 0.2s;
-}
-
-#visual-banner:hover #prev-btn,
-#visual-banner:hover #next-btn {
-  transform: scale(1.2);
-}
-
-#next-btn {
-  right: 0;
+  margin: 5rem 2rem;
 }
 
 /*- pager -*/
@@ -217,4 +205,35 @@ a {
 }
 #slide1 .point-text {
   color: rgb(70, 48, 144);
+}
+
+/*- pager-btn -*/
+#prev-btn,
+#next-btn {
+  display: flex;
+  position: absolute;
+  color: black;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  margin: 2rem;
+  background-color: rgba(255, 255, 255, 0.238);
+  padding: 1rem;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  transition: 0.2s;
+}
+
+#prev-btn:active,
+#next-btn:active {
+  background-color: rgba(255, 255, 255, 0.442);
+}
+
+#visual-banner:hover #prev-btn,
+#visual-banner:hover #next-btn {
+  transform: scale(1.2);
+}
+
+#next-btn {
+  right: 0;
 }
