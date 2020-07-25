@@ -8,14 +8,24 @@
   font-style: normal;
 }
 
-/*기본 스타일링 리셋*/
+/*- 기본 스타일링 리셋 -*/
 * {
   box-sizing: border-box;
+  text-align: -webkit-match-parent;
 }
 
 body {
   margin: 0;
   font-family: 'Nanum Gothic', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
 }
 
 ul {
@@ -31,3 +41,121 @@ a {
   text-decoration: none;
 }
 /*-----*/
+
+/*----- 헤더 -----*/
+/*- gnb -*/
+#gnb {
+  background-color: rgb(97, 79, 155);
+  padding: 0 2rem;
+}
+
+#gnb > ul {
+  display: flex;
+  font-size: 0.8rem;
+  height: 2rem;
+  align-items: center;
+}
+
+#gnb a {
+  color: white;
+  padding: 0 0.5rem;
+}
+
+/*- 메인 메뉴 네비게이션바 -*/
+#main-navi,
+#main-navi > .menu,
+#main-navi > .menu li,
+#main-navi > .icons {
+  display: flex;
+  align-items: center;
+}
+
+#main-navi {
+  background-color: rgb(243, 243, 243);
+  font-size: 1.1rem;
+  padding: 1rem 2rem;
+  height: 5rem;
+}
+
+.menu {
+  height: 100%;
+  padding: 0 1rem;
+}
+
+#main-navi > .menu a {
+  color: rgb(57, 57, 57);
+  padding: 0.5rem 1.5rem;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+#main-navi > .menu a:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.logo-box {
+  display: flex;
+  width: 100px;
+}
+
+.logo-box img {
+  width: 100px;
+}
+
+.icons {
+  margin-left: auto;
+  display: flex;
+}
+
+.icons > button {
+  font-size: 1.2rem;
+  display: flex;
+  padding: 0.5rem;
+  height: 100%;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+.icons > button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/*-----슬라이더-----*/
+
+#visual-banner {
+  width: 100vw;
+  height: 600px;
+  position: relative;
+}
+/*- 움직이게 되는 컨테이너 -*/
+.slider-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.slide-item {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.slide-content {
+  width: 1024px;
+  border: 1px solid black;
+  margin: 2rem;
+}
+
+/*- 슬라이더 개별 스타일링 -*/
+#slide1 {
+  background-image: url('../images/visual-main.jpg');
+}
+#slide1 > .slide-content {
+  font-family: 'MapoGoldenPier';
+}
