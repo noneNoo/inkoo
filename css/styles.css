@@ -113,9 +113,10 @@ a {
 }
 
 #search-input {
+  background-color: rgb(216, 214, 223);
   border: none;
   border-radius: 100px;
-  padding: 0.5rem;
+  padding: 0.5rem 1rem 0.5rem 2.5rem;
   outline: none;
   width: 200px;
   margin-right: 1rem;
@@ -134,6 +135,16 @@ a {
   outline: none;
   background-color: transparent;
   border-radius: 4px;
+}
+
+.icons > #search {
+  margin: -2.5rem;
+  z-index: 10;
+  font-size: 1rem;
+}
+
+.icons > #search:hover {
+  background-color: transparent;
 }
 
 .icons > button:hover {
