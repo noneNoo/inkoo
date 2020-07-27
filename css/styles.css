@@ -24,11 +24,15 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+p,
+article {
   margin: 0;
+  padding: 0;
 }
 
 button {
+  margin: 0;
   padding: 0;
   cursor: pointer;
 }
@@ -116,7 +120,7 @@ a {
   background-color: rgb(216, 214, 223);
   border: none;
   border-radius: 100px;
-  padding: 0.5rem 1rem 0.5rem 2.5rem;
+  padding: 0.5rem 1rem 0.5rem 2.8rem;
   outline: none;
   width: 200px;
   margin-right: 1rem;
@@ -156,7 +160,6 @@ a {
 #visual-banner {
   display: flex;
   align-items: center;
-  width: 100vw;
   height: 600px;
   position: relative;
 }
@@ -247,4 +250,32 @@ a {
 
 #next-btn {
   right: 0;
+}
+/*----- sale product -----*/
+
+#sale-product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: khaki;
+  padding: 5rem 0;
+}
+.product-title {
+  font-family: 'Nanum Myeongjo', serif;
+  font-weight: 1000;
+  letter-spacing: 0.1rem;
+}
+
+.product-container {
+  display: flex;
+}
+
+.sale-item-container {
+  display: flex;
+}
+
+.sale-item-box > img {
+  width: 230px;
+  height: 212px;
+  object-fit: cover;
 }
