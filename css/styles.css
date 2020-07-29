@@ -56,7 +56,7 @@ a {
 /*----- 헤더 -----*/
 /*- gnb -*/
 #gnb {
-  background-color: rgb(97, 79, 155);
+  background-color: #614f9b;
   padding: 0 2rem;
 }
 
@@ -253,6 +253,28 @@ a {
 #next-btn {
   right: 0;
 }
+
+/*----- about us -----*/
+
+#about-us {
+  padding: 5rem;
+  font-family: 'Nanum Myeongjo', serif;
+}
+
+.about-us-container {
+  display: flex;
+  justify-content: center;
+}
+
+.about-us-container > img {
+  width: 400px;
+  margin-right: 1rem;
+}
+
+.about-us-container > p {
+  display: flex;
+  align-items: center;
+}
 /*----- 세일중인 상품들 -----*/
 
 #sale-product {
@@ -264,10 +286,12 @@ a {
   padding: 5rem 0;
 }
 
-.product-title {
+.section-title {
+  font-family: 'Nanum Myeongjo', serif;
   font-weight: 1000;
   letter-spacing: 0.1rem;
   margin-bottom: 2.5rem;
+  text-align: center;
 }
 
 .sale-info {
@@ -305,8 +329,20 @@ a {
   align-items: center;
 }
 
+/*- 미니 슬라이더 틀 -*/
 .sale-item-container {
   display: flex;
+  position: relative;
+  border: 1px solid red;
+  width: 663px;
+  overflow: hidden;
+}
+
+/*- 미니 슬라이더 -*/
+.sale-item-container > #mini-slide {
+  display: flex;
+  position: relative;
+  left: 0;
 }
 
 .sale-item-box {
@@ -320,7 +356,7 @@ a {
 
 .sale-item-box > img {
   display: flex;
-  width: 230px;
+  width: 210px;
   height: 212px;
   object-fit: cover;
 }
@@ -375,4 +411,16 @@ a {
 
 .sale-item-box:hover .filter {
   opacity: 0.2;
+}
+
+@media (max-width: 1024px) {
+  .sale-info {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .sale-item-container {
+    width: 438px;
+  }
 }
