@@ -74,9 +74,9 @@ a {
 
 /*- 메인 메뉴 네비게이션바 -*/
 #main-navi,
-#main-navi > .menu,
-#main-navi > .menu li,
-#main-navi > .icons {
+#main-navi > #menu,
+#main-navi > #menu li,
+#main-navi > #icons {
   display: flex;
   align-items: center;
 }
@@ -85,22 +85,22 @@ a {
   background-color: #f7f7f7;
   font-size: 1.1rem;
   padding: 1rem 2rem;
-  height: 5rem;
+  /* height: 5rem; */
 }
 
-.menu {
+#menu {
   height: 100%;
   padding: 0 1rem;
 }
 
-#main-navi > .menu a {
+#main-navi > #menu a {
   color: rgb(57, 57, 57);
   padding: 0.5rem 1.5rem;
   border-radius: 4px;
   font-weight: bold;
 }
 
-#main-navi > .menu a:hover {
+#main-navi > #menu a:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
@@ -116,6 +116,7 @@ a {
 .icons {
   margin-left: auto;
   display: flex;
+  align-items: center;
 }
 
 #search-input {
@@ -144,7 +145,7 @@ a {
 }
 
 .icons > #search {
-  margin: -2.5rem;
+  margin-right: -2.5rem;
   z-index: 10;
   font-size: 1rem;
 }
@@ -157,6 +158,20 @@ a {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
+/*햄버거버튼*/
+
+#hamburger-btn {
+  position: absolute;
+  display: flex;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  right: 2rem;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
 /*-----슬라이더-----*/
 
 #visual-banner {
@@ -166,7 +181,7 @@ a {
   position: relative;
 }
 /*- 움직이게 되는 컨테이너 -*/
-.slider-container {
+#slider-container {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -415,11 +430,11 @@ a {
 }
 
 #sale-container {
-  width: 1024px;
+  width: 1000px;
   display: grid;
   gap: 25px;
-  grid-template-rows: 324px 324px;
-  grid-template-columns: 324px 324px 324px;
+  grid-template-rows: 316px 316px;
+  grid-template-columns: 316px 316px 316px;
   grid-auto-flow: dense;
   margin-top: 20px;
 }
@@ -461,7 +476,7 @@ a {
 
 #package-container {
   display: flex;
-  width: 1024px;
+  width: 1000px;
 }
 
 .package-item {
@@ -515,14 +530,14 @@ a {
 }
 
 #best-container {
-  width: 1024px;
+  width: 1000px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
 .best-item {
-  width: 237.4px;
+  width: 231.25px;
   margin-bottom: 25px;
   color: #f7f7f7;
   position: relative;
@@ -568,7 +583,7 @@ footer {
 }
 
 footer > #footer-container {
-  width: 1024px;
+  width: 1000px;
   display: flex;
   justify-content: space-between;
   padding: 2.5rem 0;
@@ -582,4 +597,182 @@ footer > #footer-container {
   font-size: 0.9rem;
   font-weight: normal;
   margin-top: 1rem;
+}
+
+/*-----반응형------*/
+/*1024px*/
+@media (max-width: 1024px) {
+  #search-input {
+    display: none;
+  }
+
+  .icons > #search {
+    margin: 0;
+    font-size: 1.1rem;
+  }
+
+  #visual-banner {
+    height: 500px;
+  }
+
+  #package-container,
+  #sale-container,
+  #best-container {
+    width: 740px;
+  }
+
+  #sale-container {
+    grid-template-rows: 230px 230px;
+    grid-template-columns: 230px 230px 230px;
+  }
+
+  #sale-container > .sale-item:nth-child(1) {
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+
+  #sale-container > .sale-item:nth-child(4) {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 2;
+    grid-column-end: 4;
+  }
+
+  .best-item {
+    width: 166.25px;
+  }
+
+  #footer-container {
+    max-width: 740px;
+  }
+}
+
+/*768px 모바일*/
+@media (max-width: 768px) {
+  #gnb {
+    display: none;
+  }
+
+  #main-navi {
+    flex-direction: column;
+    z-index: 1000;
+    position: fixed;
+    width: 100%;
+    padding: 1rem 0;
+  }
+
+  #main-navi > #menu {
+    flex-direction: column;
+    z-index: 1000;
+    padding: 0.5rem 0 2rem 0;
+    width: 100%;
+    /*햄버거버튼작동*/
+    display: none;
+  }
+
+  #menu > li {
+    padding: 0.5rem 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  #menu > li > a {
+    width: 100%;
+    padding: 0;
+  }
+
+  .icons {
+    z-index: 1000;
+    bottom: 0;
+    position: absolute;
+    margin: 0.5rem 0;
+    /*햄버거버튼작동*/
+    display: none;
+  }
+
+  .icons > button {
+    margin-left: 1rem;
+  }
+
+  .icons > #search:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  #visual-banner {
+    height: 500px;
+  }
+
+  #package-container,
+  #sale-container,
+  #best-container {
+    width: 100%;
+    padding: 0 25px;
+  }
+
+  #sale-container {
+    grid-template-rows: 133.3px;
+    grid-template-columns: 0;
+  }
+
+  #sale-container > .sale-item:nth-child(1) {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 4;
+  }
+
+  #sale-container > .sale-item:nth-child(2) {
+    grid-row-start: 3;
+    grid-row-end: 5;
+    grid-column-start: 1;
+    grid-column-end: 4;
+  }
+
+  #sale-container > .sale-item:nth-child(3) {
+    grid-row-start: 5;
+    grid-row-end: 7;
+    grid-column-start: 1;
+    grid-column-end: 4;
+  }
+
+  #sale-container > .sale-item:nth-child(4) {
+    grid-row-start: 7;
+    grid-row-end: 9;
+    grid-column-start: 1;
+    grid-column-end: 4;
+  }
+
+  #package-container {
+    flex-direction: column;
+  }
+
+  #package-container > .package-item:not(:last-child) {
+    margin-bottom: 25px;
+  }
+
+  .best-item {
+    width: 47.75%;
+  }
+
+  #footer-container {
+    max-width: 450px;
+    flex-direction: column;
+  }
+
+  .footer-item:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  footer > #footer-container {
+    max-width: 100%;
+    padding: 2.5rem 25px;
+    flex-direction: column;
+  }
+}
+
+/*모바일 s*/
+@media (max-width: 490px) {
+  .best-item {
+    width: 100%;
+  }
 }
