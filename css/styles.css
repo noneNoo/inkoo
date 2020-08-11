@@ -339,44 +339,6 @@ a {
   background-color: #877861;
 }
 
-/*--- 세일상품 틀, 이미지  ---*/
-.product-container {
-  display: flex;
-  align-items: center;
-}
-
-/*- 미니 슬라이더 틀 -*/
-.sale-item-container {
-  display: flex;
-  position: relative;
-  border: 1px solid red;
-  width: 663px;
-  overflow: hidden;
-}
-
-/*- 미니 슬라이더 -*/
-.sale-item-container > #mini-slide {
-  display: flex;
-  position: relative;
-  left: 0;
-}
-
-.sale-item-box {
-  position: relative;
-  background-color: white;
-}
-
-.sale-item-box:not(:last-child) {
-  margin-right: 1rem;
-}
-
-.sale-item-box > img {
-  display: flex;
-  width: 210px;
-  height: 212px;
-  object-fit: cover;
-}
-
 /*--- 세일상품정보 ---*/
 
 .sale-item-container .info-container {
@@ -414,17 +376,6 @@ a {
   color: #614f9b;
 }
 
-/*- 필터 -*/
-/* 
-.filter {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: black;
-  opacity: 0;
-  transition: 0.2s;
-} */
-
 #sale-product {
   background-color: #f7f7f7;
 }
@@ -450,11 +401,19 @@ a {
   grid-column-start: 2;
   grid-column-end: 4;
 }
+#sale-container > .sale-item {
+  overflow: hidden;
+}
+
+#sale-container > .sale-item:hover img {
+  transform: scale(1.2);
+}
 
 #sale-container img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: 0.5s;
 }
 
 /*-----패키지-----*/
@@ -561,7 +520,7 @@ a {
 
 .best-item > .filter {
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.2);
   width: 100%;
   height: 100%;
   opacity: 0;
