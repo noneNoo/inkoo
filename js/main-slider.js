@@ -7,15 +7,43 @@ const slideContainer = document.getElementById('slider-container'),
 
 let timer = null;
 //아이템을 옆으로 정렬
-//
 
 for (let i = 0; i < slideItems.length; i++) {
   slideItems[i].style.left = i * 100 + '%';
 }
 let currentIndex = 0;
 
+// item갯수만큼 pager 도트 생성
+function pagerAdd() {
+  for (let i = 0; i < slideItems.length; i++) {
+    let newPagerDot = document.createElement('span');
+    newPagerDot.classList.add('pager-dot');
+    newPagerDot.id = i;
+    pagerContainer.appendChild(newPagerDot);
+  }
+}
+pagerAdd();
+
+// pager에 색을 입히는 함수
+function pagerPaint(idx) {
+  for (let i = 0; i < slideItems.length; i++) {
+    pagerContainer.childNodes[i].classList.remove('active');
+  }
+  pagerContainer.childNodes[idx].classList.add('active');
+}
+
+// pager 클릭시 이동 함수
+function pagerClickHandler(e) {
+  for (let i = 0; i < slideItems.length; i++) {
+    if (e.target.id == i) {
+      goToSlide(i);
+    }
+  }
+}
+
 function goToSlide(idx) {
   slideContainer.style.left = idx * -100 + '%';
+  pagerPaint(idx);
 }
 
 function slideBtnHandler(e) {
@@ -39,18 +67,6 @@ function slideBtnHandler(e) {
   }
   goToSlide(currentIndex);
 }
-// item갯수만큼 pager 도트 생성
-function pagerAdd() {
-  console.log(pagerContainer);
-  for (let i = 0; i < slideItems.length; i++) {
-    let newPagerDot = document.createElement('span');
-    newPagerDot.classList.add('pager-dot');
-    newPagerDot.id = i;
-    pagerContainer.appendChild(newPagerDot);
-  }
-}
-pagerAdd();
-
 //자동 슬라이드 함수
 function autoSlide() {
   timer = setInterval(() => {
@@ -75,3 +91,4 @@ slideBtnNext.addEventListener('click', slideBtnHandler);
 slideBtnPrev.addEventListener('click', slideBtnHandler);
 slideContainer.addEventListener('mouseenter', bannerMouseEnterHandler);
 slideContainer.addEventListener('mouseleave', bannerMouseLeaveHandler);
+pagerContainer.addEventListener('click', pagerClickHandler);

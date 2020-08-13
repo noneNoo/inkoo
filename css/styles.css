@@ -220,6 +220,7 @@ a {
   border-radius: 100px;
   margin: 0.5rem;
   background-color: white;
+  transition: 0.5s;
 }
 
 #pager > span.active {
