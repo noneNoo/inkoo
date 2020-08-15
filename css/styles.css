@@ -551,6 +551,32 @@ footer > #footer-container {
   margin-top: 1rem;
 }
 
+#top-btn {
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #614f9b;
+  color: white;
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: 0.2s;
+  opacity: 0;
+}
+
+#top-btn:hover {
+  background-color: white;
+  color: #614f9b;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+}
+
+/*-------------------------------------------------------------------------*/
 /*-----반응형------*/
 /*1024px*/
 @media (max-width: 1024px) {
