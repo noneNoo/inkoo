@@ -104,12 +104,13 @@ a {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-.logo-box {
+.navi-hd {
   display: flex;
   width: 100px;
+  position: relative;
 }
 
-.logo-box img {
+.navi-hd img {
   width: 100px;
 }
 
@@ -170,6 +171,15 @@ a {
   background-color: transparent;
   border: none;
   outline: none;
+  display: none;
+}
+
+.ham-in {
+  display: none;
+}
+
+.ham-out {
+  display: flex;
 }
 
 /*-----슬라이더-----*/
@@ -637,21 +647,45 @@ footer > #footer-container {
     display: none;
   }
 
+  #hamburger-btn {
+    display: flex;
+  }
+
+  .navi-hd {
+    background-color: #f7f7f7;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0;
+    position: fixed;
+  }
+
   #main-navi {
     flex-direction: column;
     z-index: 1000;
-    position: fixed;
     width: 100%;
-    padding: 1rem 0;
+    padding: 0;
+    position: fixed;
   }
 
   #main-navi > #menu {
+    position: fixed;
     flex-direction: column;
     z-index: 1000;
     padding: 0.5rem 0 2rem 0;
     width: 100%;
-    /*햄버거버튼작동*/
-    display: none;
+    height: max-content;
+    background-color: #f7f7f7;
+    padding-top: 1rem;
+    padding-bottom: 2.5rem;
+    z-index: -1;
+    transform: translateY(-100%);
+    transition: 1s;
+  }
+
+  #main-navi > #menu.active {
+    transform: translateY(0%);
   }
 
   #menu > li {
@@ -670,7 +704,15 @@ footer > #footer-container {
     bottom: 0;
     position: absolute;
     margin: 0.5rem 0;
-    /*햄버거버튼작동*/
+  }
+  .ham-in {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .ham-out {
     display: none;
   }
 
