@@ -11,9 +11,9 @@
       <!--상단 gnb-->
       <nav id="gnb">
         <ul>
-          <li class="gnb-li"><a href="#">로그인</a></li>
-          <li class="gnb-li"><a href="#">회원가입</a></li>
-          <li class="gnb-li"><a href="#">마이페이지</a></li>
+          <li class="gnb-li"><button id="login-modal-open-btn">로그인</button></li>
+          <li class="gnb-li"><button id="join-modal-open-btn">회원가입</button></li>
+          <li class="gnb-li"><button id="mypage-go-btn">마이페이지</button></li>
         </ul>
       </nav>
       <!--메인 네비게이션바-->
@@ -456,7 +456,7 @@
             </div>
 
             <div class="best-info">
-              <h2 class="info-title">바다가 보이는 이발소</h2>
+              <h2 class="info-title">바다가 들린다</h2>
               <h3 class="price">7,900</h3>
             </div>
           </a>
@@ -651,10 +651,83 @@
         </div>
       </footer>
     </main>
+    <div id="modal-container" class="">
+      <div id="modal-overlay"></div>
+      <div id="modal-item-container">
+        <section id="login-modal" class="modal-item">
+          <h1 class="modal-title">로그인</h1>
+          <div class="modal-content">
+            <!-- <h3 class="modal-content-title">계정정보</h3> -->
+            <article class="input-box">
+              <input type="text" placeholder="아이디">
+              <div class="border-1px"></div>
+            </article>
+            
+            <article class="input-box">
+              <input type="text" placeholder="비밀번호">
+              <div class="border-1px"></div>
+            </article>
+            <!-- 
+            <div class="input-box">
+              <input type="text" placeholder="비밀번호 확인">
+              <div class="border-1px"></div>
+            </div> -->
+            <button class="modal-btn" id="modal-login-btn">로그인</button>
+
+            <article class="input-sub-box">
+              <a href="#">비밀번호를 잊으셨나요?</a>
+            </article>
+
+            <article class="input-or-box">
+              <div class="border-1px"></div>
+              <div class="or">or</div>
+            </article>
+
+            <input type="button" class="modal-btn" id="modal-join-btn" value="회원가입">
+          </div>
+        </section>
+        
+
+        <section id="join-modal" class="modal-item">
+          <h1 class="modal-title">로그인</h1>
+          <div class="modal-content">
+            <!-- <h3 class="modal-content-title">계정정보</h3> -->
+            <article class="input-box">
+              <input type="text" placeholder="아이디">
+              <div class="border-1px"></div>
+            </article>
+            
+            <article class="input-box">
+              <input type="text" placeholder="비밀번호">
+              <div class="border-1px"></div>
+            </article>
+            <!-- 
+            <div class="input-box">
+              <input type="text" placeholder="비밀번호 확인">
+              <div class="border-1px"></div>
+            </div> -->
+            <button class="modal-btn" id="modal-login-btn">로그인</button>
+
+            <article class="input-sub-box">
+              <a href="#">비밀번호를 잊으셨나요?</a>
+            </article>
+
+            <article class="input-or-box">
+              <div class="border-1px"></div>
+              <div class="or">or</div>
+            </article>
+
+            <input type="button" class="modal-btn" id="modal-join-btn" value="회원가입">
+          </div>
+        </section>
+      </div>
+    </div>
+    
     <input type="button" value="TOP" id="top-btn" />
     <script src="./js/main-slider.js"></script>
     <script src="./js/top-btn.js"></script>
     <script src="./js/hamburger-btn.js"></script>
     <script src="./js/fade-in-out.js"></script>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
